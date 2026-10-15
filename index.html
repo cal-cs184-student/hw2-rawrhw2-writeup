@@ -51,31 +51,50 @@
 		Give a high-level overview of what you implemented in this homework. Think about what you've built as a whole. Share your thoughts on what interesting things you've learned from completing the homework.
 
 		<h2>Section I: Bezier Curves and Surfaces</h2>
-
-		<h3>Part 1: Bezier curves with 1D de Casteljau subdivision</h3>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
+<h3>Part 1: Bezier curves with 1D de Casteljau subdivision</h3>
+<p>Edited&nbsp;using&nbsp;<a href="https://wysiwyghtml.com/">https://wysiwyghtml.com/</a>.&nbsp;</p>
+<p>Briefly explain de Casteljau&rsquo;s algorithm and how you implemented it in order to evaluate Bezier curves. De Casteljau's algorithm is an algorithm used to parametrically define a curve given a number of points in space. Given a string of points, create a parameter that begins at 0 and goes to x. For each value of the parameter, create a point on each line between consecutive points which falls at the value/x fraction of the way along that line. You now have a set of points which is one fewer than the starting set of points. Repeat this recursively until you are left with one point only. That point is on the line, and is the point corresponding to the stated value of the parameter x. If this process is repeated for all values of the parameter from 0 through x, then the set of all the points on the curve will define a curve. I implemented it in mych that way, using a simple set of equations to create a function which took care of a single recursive step, iterating through each line segment in a loop until all points in the current set have had the intermediates calculated.&nbsp;</p>
 		<p>Here is an example 2x2 gridlike structure using an HTML table. Each <b>tr</b> is a row and each <b>td</b> is a column in that row. You might find this useful for framing and showing your result images in an organized fashion.</p>
 		<div style="display: flex; flex-direction: column; align-items: center;">
 			<table style="width: 100%; text-align: center; border-collapse: collapse;">
 			  <tr>
 				<td style="text-align: center;">
-				  <img src="assets/teapot.png" width="400px"/>
-				  <figcaption>Caption goes here.</figcaption>
+				  <img src="assets/image.png" width="400px"/>
+				  <figcaption>All points with full line as well.</figcaption>
 				</td>
 				<td style="text-align: center;">
-				  <img src="assets/teapot.png" width="400px"/>
-				  <figcaption>Caption goes here.</figcaption>
+				  <img src="assets/Screenshot 2026-10-14 at 5.56.17 PM.png" width="400px"/>
+				  <figcaption>First recursive step.</figcaption>
 				</td>
 			  </tr>
 			  <tr>
 				<td style="text-align: center;">
-				  <img src="assets/teapot.png" width="400px"/>
-				  <figcaption>Caption goes here.</figcaption>
+				  <img src="assets/Screenshot 2026-10-14 at 5.56.20 PM.png" width="400px"/>
+				  <figcaption>Second recursive step.</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="assets/Screenshot 2026-10-14 at 5.56.21 PM.png" width="400px"/>
+				  <figcaption>Third recursive step.</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="assets/Screenshot 2026-10-14 at 5.56.23 PM.png" width="400px"/>
+				  <figcaption>Fourth recursive step.</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="assets/Screenshot 2026-10-14 at 5.56.25 PM.png" width="400px"/>
+				  <figcaption>Fifth recursive step.</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="assets/Screenshot 2026-10-14 at 5.56.44 PM.png" width="400px"/>
+				  <figcaption>With one point shifted and with parameter changed away from one-half.</figcaption>
 				</td>
 				<td style="text-align: center;">
 				  <img src="assets/teapot.png" width="400px"/>
-				  <figcaption>Caption goes here.</figcaption>
+				  <figcaption>Placeholder teapot for formatting.</figcaption>
 				</td>
 			  </tr>
 			</table>
