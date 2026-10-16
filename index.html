@@ -181,8 +181,80 @@ reassigned neighbors using the setNeighbors() function.
 		</table>
 		</div>
 		<h3>Part 6: Loop subdivision for mesh upsampling</h3>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		I implemented loop subdivision by iterating through all vertices to find their new positions according to the algorithm,
+		 going through all edges to find positions for new vertices according to the algorithm, 
+		 going through all original edges and splitting them, 
+		 going through all new edges and flipping them if necessary, 
+		 and finally applying the new positions at the end. 
+		 It took a bit of thinking and checking to figure out an order of operations that would lead to the result I was looking for without ending up doing confounding or reducant operations. 
 
+		  <div>
+		  </div>
+sharp corners and edges are significantly "smoothed" because, by virtue of their sharpness, their position must differ significantly from at least some of their neighboring vertices, meaning they are greatly changed to be less aggressively out of plane with their neighbors. 
+Yes, this effect can be reduced by pre-splitting some edges. By pre-splitting more edges connected to a vertex before running the loop splitting algorithm, the distance between it and the adjacent points is greatly reduced, meaning it is pulled less overall and so is perceived as being smoothed less. 
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="assets/6-1.png" width="400px"/>
+				  <figcaption>Default cube with 0 loop subdivisions.</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="assets/6-2.png" width="400px"/>
+				  <figcaption>Default cube with 1 loop subdivisions.</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="assets/6-3.png" width="400px"/>
+				  <figcaption>Default cube with 2 loop subdivisions.</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="assets/6-4.png" width="400px"/>
+				  <figcaption>Default cube with 3 loop subdivisions.</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="assets/6-5.png" width="400px"/>
+				  <figcaption>Default cube with 4 loop subdivisions.</figcaption>
+				</td>
+			  </tr>
+		</table>
+		</div>
+
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="assets/6-10.png" width="400px"/>
+				  <figcaption>Modified symmetrical cube with 0 loop subdivisions.</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="assets/6-11.png" width="400px"/>
+				  <figcaption>Modified symmetrical cube with 1 loop subdivisions.</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="assets/6-12.png" width="400px"/>
+				  <figcaption>Modified symmetrical cube with 2 loop subdivisions.</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="assets/6-13.png" width="400px"/>
+				  <figcaption>Modified symmetrical cube with 3 loop subdivisions.</figcaption>
+				</td>
+			  </tr>
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="assets/6-14.png" width="400px"/>
+				  <figcaption>Modified symmetrical cube with 4 loop subdivisions.</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="assets/6-15.png" width="400px"/>
+				  <figcaption>Modified symmetrical cube with 5 loop subdivisions.</figcaption>
+				</td>
+			  </tr>
 		<h2>(Optional) Section III: Potential Extra Credit - Art Competition: Model something Creative</h2>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
